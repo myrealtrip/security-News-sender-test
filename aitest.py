@@ -99,7 +99,7 @@ def entry_ts(e):
         return int(time.mktime(t))
     return 0
 
-def fetch_all_recent_entries(max_entries=30):
+def fetch_all_recent_entries(max_entries=20):
     """모든 RSS 피드에서 최근 기사들을 가져옴"""
     all_entries = []
     
@@ -626,7 +626,7 @@ def process_articles_ai_driven():
     seen_links = set(state.get("seen_links", []))
     
     # 최근 기사들 가져오기
-    recent_entries = fetch_all_recent_entries(max_entries=30)
+    recent_entries = fetch_all_recent_entries(max_entries=20)
     
     if not recent_entries:
         print("❌ No RSS entries found.")
