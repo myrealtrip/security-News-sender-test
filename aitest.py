@@ -276,6 +276,9 @@ def judge_with_ai(e, custom_prompt=None):
         print("[ERROR] AI 프롬프트 파일이 없습니다.")
         return None
     
+    # AI_PROVIDER 값 확인 및 출력
+    print(f"[DEBUG] AI_PROVIDER 값: '{AI_PROVIDER}' (타입: {type(AI_PROVIDER).__name__})")
+    
     # API 키 확인
     if AI_PROVIDER == "anthropic":
         if not ANTHROPIC_API_KEY:
@@ -285,8 +288,9 @@ def judge_with_ai(e, custom_prompt=None):
         print(f"[DEBUG] AI Provider: Anthropic, Model: {ANTHROPIC_MODEL}")
     else:
         if not OPENAI_API_KEY:
-            print("[WARN] OPENAI_API_KEY가 설정되지 않았습니다.")
+            print(f"[WARN] OPENAI_API_KEY가 설정되지 않았습니다. (현재 AI_PROVIDER: '{AI_PROVIDER}')")
             print(f"[DEBUG] AI_PROVIDER: {AI_PROVIDER}, OPENAI_API_KEY 길이: {len(OPENAI_API_KEY) if OPENAI_API_KEY else 0}")
+            print(f"[WARN] AI_PROVIDER가 'anthropic'이 아닙니다. GitHub Secrets에서 AI_PROVIDER를 'anthropic'으로 설정하거나, Secrets를 제거하여 기본값을 사용하세요.")
             return None
         print(f"[DEBUG] AI Provider: OpenAI, Model: {OPENAI_MODEL}")
     
