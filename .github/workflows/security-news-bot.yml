@@ -1,0 +1,54 @@
+name: Security News Bot
+
+on:
+  schedule:
+    # 매 5분마다 실행
+    - cron: '*/5 * * * *'
+  workflow_dispatch:  # 수동 실행 가능
+
+jobs:
+  check-news:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+      
+      - name: Restore state file from previous run
+        uses: actions/download-artifact@v3
+        with:
+          name: state-file
+          path: .
+        continue-on-error: true
+      
+      - name: Run security news bot
+        env:
+          # GitHub Secrets를 환경변수로 매핑 (자동 인식 안 됨, 명시적으로 설정 필요!)
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          USE_AI_JUDGMENT: ${{ secrets.USE_AI_JUDGMENT }}
+          AI_PROVIDER: ${{ secrets.AI_PROVIDER }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_MODEL: ${{ secrets.ANTHROPIC_MODEL || 'claude-3-5-haiku-20241022' }}
+          # OpenAI 사용 시 (주석 해제):
+          # OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          # OPENAI_MODEL: ${{ secrets.OPENAI_MODEL || 'gpt-4o-mini' }}
+        run: |
+          python aitest.py
+      
+      - name: Save state file for next run
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: state-file
+          path: state.aitest.json
+          retention-days: 30
+          if-no-files-found: ignore
