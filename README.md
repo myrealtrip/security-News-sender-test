@@ -13,7 +13,7 @@ AI 기반 보안 뉴스 필터링 및 Slack 발송 봇
 
 다음과 같은 형태로 Slack에 보안 뉴스 알림이 발송됩니다:
 
-![Slack 알림 예시](./images/slack-notification-example.png)
+![Slack 알림 예시](./ima/image.png)
 
 **알림 구성 요소:**
 - 🔴 위험도 표시 (높음/중간/낮음)
