@@ -1,28 +1,96 @@
 {
-  "timestamp": "2026-01-21 09:15:33",
+  "timestamp": "2026-01-21 09:47:36",
   "total_articles": 20,
-  "sent_count": 1,
+  "sent_count": 4,
   "sent_articles": [
     {
       "title": "송경희 개인정보위원장 “쿠팡 유출 3000만명 맞고, SKT 소송 적극 대응할 것”",
       "link": "http://www.boannews.com/media/view.asp?idx=141610&kind=1&sub_kind=",
       "ai_judgment": {
         "decision": "SCRAPE",
-        "score": 90,
+        "score": 85,
         "why": [
-          "국내 IT 기업(쿠팡)의 대규모 개인정보 유출 사고",
-          "3000만명 이상의 대규모 개인정보 유출로 심각성 확인",
-          "개인정보보호위원회 위원장의 공식 확인으로 사실성 높음"
+          "국내 대기업 쿠팡의 대규모 개인정보 유출 사고",
+          "3000만명 이상의 개인정보 유출로 심각성 확인",
+          "개인정보보호위원회 위원장이 직접 언급한 사건으로 신뢰성 높음"
         ],
         "products_affected": [
-          "쿠팡 서비스"
+          "쿠팡"
         ],
         "tags": [
           "개인정보 유출",
-          "쿠팡",
-          "대규모 유출"
+          "대규모 유출",
+          "개인정보보호법"
         ],
-        "summary_3lines": "🔴 높음 | 대규모 개인정보 유출\n🎯 대상: 쿠팡\n📊 유출규모: 3000만명 이상 개인정보"
+        "summary_3lines": "🔴 높음 | 개인정보 대규모 유출\n대상: 쿠팡\n내용: 3000만명 이상 개인정보 유출, 개인정보보호법 위반 확인"
+      }
+    },
+    {
+      "title": "아파치 bRPC ‘비상’... 인증 없이 원격 명령 실행하는 취약점 발견",
+      "link": "http://www.boannews.com/media/view.asp?idx=141595&kind=1&sub_kind=",
+      "ai_judgment": {
+        "decision": "SCRAPE",
+        "score": 85,
+        "why": [
+          "아파치 bRPC는 널리 사용되는 오픈소스로 보안 담당자가 인지해야 할 취약점",
+          "CVE-2025-60021로 식별된 실제 취약점 기사",
+          "인증 없이 원격으로 시스템 명령을 실행할 수 있는 고위험 취약점"
+        ],
+        "products_affected": [
+          "Apache bRPC"
+        ],
+        "tags": [
+          "Vulnerability",
+          "CVE",
+          "Open Source"
+        ],
+        "summary_3lines": "🔴 높음 | 취약점(보안업데이트 권고)\n대상: 아파치 bRPC 1.15.0 미만\n설명: 내장 힙 프로파일러 서비스에서 인증 없이 원격 시스템 명령 실행 취약점"
+      }
+    },
+    {
+      "title": "\"캘린더 초대장 하나가 ‘제미나이’를 속였다\"...제미나이 캘린더 취약점의 경고",
+      "link": "https://www.dailysecu.com/news/articleView.html?idxno=204520",
+      "ai_judgment": {
+        "decision": "SCRAPE",
+        "score": 85,
+        "why": [
+          "제미나이(Gemini)는 실무에서 자주 사용하는 AI 서비스로 보안 담당자가 인지해야 할 취약점",
+          "구글 캘린더를 통한 간접 프롬프트 인젝션 공격 시나리오 발견",
+          "사용자 추가 클릭/승인 없이 정보 유출 가능한 취약점"
+        ],
+        "products_affected": [
+          "Google Gemini",
+          "Google Calendar"
+        ],
+        "tags": [
+          "Vulnerability",
+          "SaaS",
+          "AI Service",
+          "Information Disclosure"
+        ],
+        "summary_3lines": "🔴 높음 | 취약점\n대상: Google Gemini (캘린더)\n설명: 캘린더 초대장을 통한 간접 프롬프트 인젝션 정보 유출 취약점 발견"
+      }
+    },
+    {
+      "title": "맨디언트, ‘Net-NTLMv1’ 퇴출 앞당기려 레인보우 테이블 공개",
+      "link": "https://www.dailysecu.com/news/articleView.html?idxno=204474",
+      "ai_judgment": {
+        "decision": "SCRAPE",
+        "score": 85,
+        "why": [
+          "Windows 프로토콜 취약점으로 우리 시스템에 직접적인 영향",
+          "Net-NTLMv1 인증 프로토콜의 심각한 보안 취약점 발견",
+          "레인보우 테이블을 통한 키 복구 가능성 확인"
+        ],
+        "products_affected": [
+          "Windows"
+        ],
+        "tags": [
+          "Vulnerability",
+          "Windows",
+          "Authentication Protocol"
+        ],
+        "summary_3lines": "🔴 높음 | 취약점(보안업데이트 권고)\n대상: Windows Net-NTLMv1 프로토콜\n설명: 600달러 미만 하드웨어로 12시간 내 키 복구 가능"
       }
     }
   ]
