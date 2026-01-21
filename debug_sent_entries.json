@@ -1,28 +1,30 @@
 {
-  "timestamp": "2026-01-21 08:21:36",
+  "timestamp": "2026-01-21 08:48:37",
   "total_articles": 20,
-  "sent_count": 2,
+  "sent_count": 5,
   "sent_articles": [
     {
-      "title": "삼성전자 ‘특허’  담당 직원, 사내기밀 유출 혐의로 구속",
-      "link": "http://www.boannews.com/media/view.asp?idx=141607&kind=1&sub_kind=",
+      "title": "아파치 bRPC ‘비상’... 인증 없이 원격 명령 실행하는 취약점 발견",
+      "link": "http://www.boannews.com/media/view.asp?idx=141595&kind=1&sub_kind=",
       "ai_judgment": {
         "decision": "SCRAPE",
-        "score": 90,
+        "score": 85,
         "why": [
-          "국내 대기업(삼성전자) 직원의 사내 기밀 유출 사건",
-          "특허 자료 유출로 인한 구체적인 법적 조치 확인",
-          "부정경쟁방지법 위반 혐의로 직원과 특허관리기업 대표 구속"
+          "아파치 bRPC는 널리 사용되는 오픈소스로 보안 담당자가 인지해야 할 취약점",
+          "기사에 명시된 CVE-2025-60021 취약점으로 심각성 확인",
+          "인증 없이 원격 시스템 명령 실행 가능한 고위험 취약점",
+          "1.15.0 미만 모든 버전에 영향을 미치는 광범위한 취약점"
         ],
         "products_affected": [
-          "삼성전자"
+          "Apache bRPC"
         ],
         "tags": [
-          "기밀 유출",
-          "산업보안",
-          "부정경쟁방지법"
+          "Vulnerability",
+          "CVE",
+          "Remote Code Execution",
+          "Open Source"
         ],
-        "summary_3lines": "🔴 높음 | 기밀 유출 사고\n🎯 대상: 삼성전자 IP센터 직원\n📊 내용: 특허 자료 유출, 부정경쟁방지법 위반 혐의로 구속"
+        "summary_3lines": "🔴 높음 | 취약점(보안업데이트 권고)\n🎯 대상: 아파치 bRPC\n📊 설명: 인증 없이 원격 시스템 명령 실행 취약점, CVE-2025-60021"
       }
     },
     {
@@ -32,19 +34,90 @@
         "decision": "SCRAPE",
         "score": 85,
         "why": [
-          "TP-Link는 널리 사용되는 네트워크 장비 제조사로 보안 담당자가 인지해야 할 취약점",
-          "보안 업데이트 권고 기사로 실제 취약점 대응 필요성 확인",
-          "BOHO 웹사이트의 공식 보안 권고문으로 신뢰성 높음"
+          "널리 사용되는 네트워크 장비 제조사인 TP-Link 제품의 보안 취약점",
+          "보안 업데이트 권고는 보안 담당자가 인지해야 할 중요한 정보",
+          "네트워크 장비 취약점으로 우리 시스템에 잠재적 위험 존재"
         ],
         "products_affected": [
-          "TP-Link 네트워크 장비"
+          "TP-Link"
         ],
         "tags": [
           "Vulnerability",
           "Network Equipment",
           "Security Update"
         ],
-        "summary_3lines": "🔴 높음 | 취약점(보안업데이트 권고)\n🎯 대상: TP-Link 네트워크 장비\n📊 내용: 보안 취약점에 대한 공식 업데이트 권고"
+        "summary_3lines": "🔴 높음 | 취약점(보안업데이트 권고)\n🎯 대상: TP-Link 네트워크 장비\n📊 내용: 보안 취약점으로 인한 업데이트 권고"
+      }
+    },
+    {
+      "title": "\"캘린더 초대장 하나가 ‘제미나이’를 속였다\"...제미나이 캘린더 취약점의 경고",
+      "link": "https://www.dailysecu.com/news/articleView.html?idxno=204520",
+      "ai_judgment": {
+        "decision": "SCRAPE",
+        "score": 85,
+        "why": [
+          "제미나이(Gemini)는 실무에서 자주 사용하는 AI 서비스로 보안 담당자가 인지해야 할 취약점",
+          "구글 캘린더를 통한 간접 프롬프트 인젝션 공격 취약점으로 실무에 직접 영향",
+          "사용자 인증 및 안전장치를 우회하는 심각한 취약점 발견"
+        ],
+        "products_affected": [
+          "Google Gemini",
+          "Google Calendar"
+        ],
+        "tags": [
+          "Vulnerability",
+          "SaaS",
+          "AI Service",
+          "Prompt Injection"
+        ],
+        "summary_3lines": "🔴 높음 | 취약점\n🎯 대상: Google Gemini (캘린더)\n📊 설명: 캘린더 초대장 통한 간접 프롬프트 인젝션 공격 취약점 발견"
+      }
+    },
+    {
+      "title": "맨디언트, ‘Net-NTLMv1’ 퇴출 앞당기려 레인보우 테이블 공개",
+      "link": "https://www.dailysecu.com/news/articleView.html?idxno=204474",
+      "ai_judgment": {
+        "decision": "SCRAPE",
+        "score": 90,
+        "why": [
+          "Windows 프로토콜 취약점(Net-NTLMv1)으로 우리 시스템에 직접 영향",
+          "공격자가 소비자용 하드웨어로 12시간 내 키 복구 가능한 심각한 취약점",
+          "레거시 인증 프로토콜의 보안 위험성을 직접적으로 보여주는 기사"
+        ],
+        "products_affected": [
+          "Windows",
+          "Net-NTLMv1"
+        ],
+        "tags": [
+          "Vulnerability",
+          "Windows Protocol",
+          "Authentication"
+        ],
+        "summary_3lines": "🔴 높음 | 취약점(보안업데이트 권고)\n🎯 대상: Windows 네트워크 인증 프로토콜\n📊 설명: Net-NTLMv1 취약점으로 12시간 내 키 복구 가능"
+      }
+    },
+    {
+      "title": "SKT, 개인정보 유출 과징금 1347억원 취소 소송 제기",
+      "link": "http://www.boannews.com/media/view.asp?idx=141569&kind=1&sub_kind=",
+      "ai_judgment": {
+        "decision": "SCRAPE",
+        "score": 90,
+        "why": [
+          "국내 기업(SK텔레콤)의 개인정보 유출 사건으로 보안 담당자가 인지해야 할 사안",
+          "약 2324만 명 가입자의 대규모 개인정보 유출로 심각성 확인",
+          "개인정보보호위원회로부터 역대 최대 규모인 1347억원 과징금 부과",
+          "내부자에 의한 개인정보 유출 사건으로 개인정보보호법 위반 확인"
+        ],
+        "products_affected": [
+          "SK텔레콤"
+        ],
+        "tags": [
+          "개인정보 유출",
+          "과징금",
+          "개인정보보호법",
+          "ISMS-P"
+        ],
+        "summary_3lines": "🔴 높음 | 개인정보 유출\n🎯 대상: SK텔레콤\n📊 내용: 2324만 명 개인정보 유출, 1347억원 과징금 부과 및 취소 소송"
       }
     }
   ]
