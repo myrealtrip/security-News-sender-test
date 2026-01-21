@@ -666,6 +666,12 @@ def post_one_to_slack(e, ai_judgment=None):
     
     blocks = []
     
+    # 헤더 추가 (볼드체)
+    blocks.append({
+        "type": "section",
+        "text": {"type": "mrkdwn", "text": "*보안뉴스 알림*"}
+    })
+    
     # AI 판단 점수 추가 (사용자에게는 점수만 표시, 기술 용어 제거)
     score_text = ""
     if ai_judgment and "score" in ai_judgment:
