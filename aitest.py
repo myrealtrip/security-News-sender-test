@@ -796,9 +796,13 @@ def process_articles_ai_driven():
     
     print(f"[INFO] 중복 제거 후 {len(candidate_entries)}건의 신규 기사")
     
+    # 프롬프트 변경 시 재검토 기사가 있으면 계속 진행
     if not candidate_entries:
-        print("✅ 신규 기사가 없습니다.")
-        return 0
+        if prompt_changed and review_entries:
+            print(f"[INFO] 신규 기사는 없지만, 재검토 대상 기사 {len(review_entries)}건이 있습니다.")
+        else:
+            print("✅ 신규 기사가 없습니다.")
+            return 0
     
     # 2단계: 같은 배치 내 유사 제목 중복 제거 (최신 것만 선택)
     final_entries = []
