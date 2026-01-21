@@ -11,6 +11,7 @@ import os
 import json
 import time
 import re
+import hashlib
 import requests
 import feedparser
 from dotenv import load_dotenv
@@ -259,7 +260,12 @@ def is_similar_title(title1, title2, threshold=0.4):
         
         # 알려진 제품명 매칭 (하이픈, 공백 무시)
         for product in known_products:
-            pattern = product.replace(' ', r'[- ]?').replace('-', r'[- ]?')
+            # 하이픈과 공백을 선택적 문자로 변환
+            # 문자 클래스에서 하이픈은 맨 뒤에 배치하여 리터럴로 처리
+            # [-\s] 대신 [\s-] 사용 (하이픈을 맨 뒤에)
+            escaped_product = re.escape(product)
+            # 공백과 하이픈을 선택적 문자로 변환 (하이픈을 맨 뒤에)
+            pattern = escaped_product.replace(r'\ ', r'[\s-]?').replace(r'\-', r'[\s-]?')
             if re.search(pattern, title_lower, re.IGNORECASE):
                 normalized = product.replace(' ', '').replace('-', '').lower()
                 products.add(normalized)
