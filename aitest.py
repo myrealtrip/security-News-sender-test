@@ -232,6 +232,64 @@ def is_similar_title(title1, title2, threshold=0.4):
         len_diff = abs(len(norm1) - len(norm2)) / max(len(norm1), len(norm2))
         return len_diff < 0.3
     
+    # 제품명/기업명이 다르면 유사하지 않다고 판단
+    # "제품 보안 업데이트 권고" 형식의 기사는 제품명으로 구분
+    # 알려진 제품명/기업명 패턴 추출 (더 포괄적으로)
+    product_patterns = [
+        # 영문 제품명 (하이픈, 공백 포함)
+        r'\b([a-z]+[- ]?[a-z]+|[a-z]{3,})\b',
+        # 한글 기업명/제품명
+        r'\b([가-힣]{2,})\b'
+    ]
+    
+    # 제목에서 제품명/기업명 추출 (일반 단어 제외)
+    common_words = {'제품', '보안', '업데이트', '권고', '취약점', '패치', '발견', '수정', '업데이트', '권고', '발표', '공개'}
+    
+    def extract_product_names(title):
+        """제목에서 제품명/기업명 추출"""
+        title_lower = title.lower()
+        products = set()
+        
+        # 알려진 제품명 패턴 (하이픈, 공백 처리)
+        known_products = [
+            'tp-link', 'tplink', 'airoha', 'adobe', 'fortigate', 'windows', 'office', 
+            'microsoft', 'cisco', 'vmware', 'trend micro', 'hpe', 'mongodb', 'n8n',
+            'telegram', 'facebook', 'instagram', 'linkedin', 'gemini', 'google', 'slack', 'zoom'
+        ]
+        
+        # 알려진 제품명 매칭 (하이픈, 공백 무시)
+        for product in known_products:
+            pattern = product.replace(' ', r'[- ]?').replace('-', r'[- ]?')
+            if re.search(pattern, title_lower, re.IGNORECASE):
+                normalized = product.replace(' ', '').replace('-', '').lower()
+                products.add(normalized)
+        
+        # 대문자로 시작하는 단어 추출 (제품명일 가능성 높음)
+        # 예: "TP-Link", "Airoha", "Adobe" 등
+        capitalized_words = re.findall(r'\b([A-Z][a-z]+(?:[- ][A-Z][a-z]+)*)\b', title)
+        for word in capitalized_words:
+            normalized = word.replace(' ', '').replace('-', '').lower()
+            if len(normalized) >= 2 and normalized not in common_words:
+                products.add(normalized)
+        
+        # 한글 기업명/제품명 추출
+        korean_words = re.findall(r'\b([가-힣]{2,})\b', title)
+        for word in korean_words:
+            if word not in common_words:
+                products.add(word)
+        
+        return products
+    
+    products1 = extract_product_names(title1)
+    products2 = extract_product_names(title2)
+    
+    # 제품명/기업명이 있고, 서로 다르면 유사하지 않음
+    # 특히 "제품 보안 업데이트 권고" 형식의 기사는 제품명이 다르면 다른 기사
+    if products1 and products2:
+        # 공통 제품명이 없으면 유사하지 않음
+        if not (products1 & products2):
+            return False
+    
     # Jaccard 유사도 계산
     intersection = keywords1 & keywords2
     union = keywords1 | keywords2
