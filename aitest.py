@@ -186,11 +186,16 @@ def entry_ts(e):
     return 0
 
 def fetch_all_recent_entries(max_entries=20):
-    """모든 RSS 피드에서 최근 기사들을 가져옴"""
+    """모든 RSS 피드에서 최근 기사들을 가져옴
+    
+    RSS 피드는 공개적으로 제공되는 피드이므로 사용 가능합니다.
+    """
     all_entries = []
     
     for url in RSS_URLS:
         try:
+            # RSS 피드 요청 간 지연 (서버 부하 방지)
+            time.sleep(0.5)
             r = requests.get(url, headers=HEADERS, timeout=10)
             r.raise_for_status()
             r.encoding = r.apparent_encoding or 'utf-8'
@@ -405,15 +410,22 @@ def load_ai_prompt(use_full_content=False):
 # 기사 본문 크롤링
 # -----------------------------
 def fetch_full_article_content(link, title=""):
-    """기사 링크에서 전체 본문을 크롤링하여 가져옴"""
+    """기사 링크에서 전체 본문을 크롤링하여 가져옴
+    
+    주의: RSS 피드에서 제공된 공개 링크를 사용하며, 
+    본문 크롤링은 AI 판단을 위한 최소한의 정보 수집 목적입니다.
+    """
     if not link:
         return ""
     
     try:
-        # User-Agent 설정
+        # User-Agent 설정 (봇 식별 가능하도록 설정)
         headers = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+            "User-Agent": "MyrealtripSecurityBot/1.0 (Security News Aggregator; +https://github.com/myrealtrip/security-News-sender)"
         }
+        
+        # 요청 간 지연 (서버 부하 방지)
+        time.sleep(1)
         
         response = requests.get(link, headers=headers, timeout=10)
         response.raise_for_status()
