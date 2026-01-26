@@ -1,27 +1,29 @@
 {
-  "timestamp": "2026-01-23 04:48:38",
+  "timestamp": "2026-01-26 05:45:27",
   "total_articles": 20,
   "sent_count": 1,
   "sent_articles": [
     {
-      "title": "패치도 소용없었다! 스마터메일, 패치 배포 이틀 만에 뚫려… 인증 우회해 관리자 권한 박탈",
-      "link": "http://www.boannews.com/media/view.asp?idx=141642&kind=1&sub_kind=",
+      "title": "GNU Inetutils 취약점 보안 업데이트 권고",
+      "link": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=71948",
       "ai_judgment": {
-        "decision": "WATCHLIST",
-        "score": 65,
+        "decision": "SCRAPE",
+        "score": 85,
         "why": [
-          "스마터메일 이메일 솔루션의 취약점 발견",
-          "인증 우회 가능한 보안 결함 확인",
-          "보안 패치 이틀 만에 취약점 발견"
+          "아파치는 널리 사용되는 오픈소스로 보안 담당자가 인지해야 할 취약점",
+          "실제 취약점(CVE) 기사로 대응 가능한 보안 업데이트 권고 기사",
+          "널리 사용되는 오픈소스 제품의 취약점으로 보안 담당자의 주의 필요"
         ],
         "products_affected": [
-          "SmarterMail"
+          "GNU Inetutils"
         ],
         "tags": [
           "Vulnerability",
-          "Authentication Bypass"
+          "CVE",
+          "Open Source",
+          "Security Update"
         ],
-        "summary_3lines": "🟡 중간 | 취약점(주의 필요)\n대상: 스마터메일(SmarterMail) 이메일 솔루션\n내용: 인증 우회 취약점, 관리자 권한 획득 가능성"
+        "summary_3lines": "🔴 높음 | 취약점(보안업데이트 권고)\n대상: GNU Inetutils\n설명: 보안 취약점에 대한 업데이트 권고 발표"
       }
     }
   ]
