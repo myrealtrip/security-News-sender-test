@@ -1,74 +1,32 @@
 {
-  "timestamp": "2026-01-26 12:19:02",
+  "timestamp": "2026-01-27 06:48:46",
   "total_articles": 20,
-  "sent_count": 3,
+  "sent_count": 1,
   "sent_articles": [
     {
-      "title": "\"캘린더 초대장 하나가 ‘제미나이’를 속였다\"...제미나이 캘린더 취약점의 경고",
-      "link": "https://www.dailysecu.com/news/articleView.html?idxno=204520",
-      "ai_judgment": {
-        "decision": "SCRAPE",
-        "score": 85,
-        "why": [
-          "실무에서 자주 사용하는 SaaS 서비스(Google Gemini) 취약점",
-          "캘린더 초대장을 통한 간접 프롬프트 인젝션 공격 시나리오 발견",
-          "AI 보안 관점에서 중요한 취약점으로 판단"
-        ],
-        "products_affected": [
-          "Google Gemini",
-          "Google Calendar"
-        ],
-        "tags": [
-          "Vulnerability",
-          "SaaS",
-          "AI Service",
-          "Prompt Injection"
-        ],
-        "summary_3lines": "🔴 높음 | 취약점\n대상: Google Gemini (캘린더)\n설명: 캘린더 초대장을 통한 간접 프롬프트 인젝션으로 비공개 회의 정보 유출 가능성"
-      }
-    },
-    {
-      "title": "맨디언트, ‘Net-NTLMv1’ 퇴출 앞당기려 레인보우 테이블 공개",
-      "link": "https://www.dailysecu.com/news/articleView.html?idxno=204474",
+      "title": "MS, 공격에 악용 중인 오피스 제로데이 취약점 긴급 업데이트 배포",
+      "link": "https://www.dailysecu.com/news/articleView.html?idxno=204702",
       "ai_judgment": {
         "decision": "SCRAPE",
         "score": 90,
         "why": [
-          "Windows 프로토콜(Net-NTLMv1) 취약점으로 우리 시스템에 직접 영향",
-          "자격증명 탈취 및 내부 확산 가능성 높은 취약점",
-          "보안 담당자가 즉시 대응해야 할 중요한 보안 권고사항 포함"
+          "Office 365는 우리가 사용하는 시스템으로 보안 담당자가 인지해야 할 취약점",
+          "실제 공격에 악용 중인 제로데이 취약점으로 심각성 높음",
+          "CVE-2026-21509로 공식 식별된 취약점"
         ],
         "products_affected": [
-          "Windows Net-NTLMv1"
+          "Microsoft Office 365",
+          "Microsoft Office 2016",
+          "Microsoft Office 2019",
+          "Microsoft Office LTSC 2021",
+          "Microsoft Office LTSC 2024"
         ],
         "tags": [
           "Vulnerability",
-          "Windows",
-          "Authentication Protocol"
+          "Zero-Day",
+          "Microsoft Office"
         ],
-        "summary_3lines": "🔴 높음 | 취약점(보안업데이트 권고)\n대상: Windows Net-NTLMv1 프로토콜\n내용: 600달러 미만 장비로 12시간 내 키 복구 가능, 즉시 비활성화 권고"
-      }
-    },
-    {
-      "title": "워드프레스 플러그인 ‘Modular DS’ 치명적 취약점 악용…관리자 권한 탈취 공격 확산",
-      "link": "https://www.dailysecu.com/news/articleView.html?idxno=204404",
-      "ai_judgment": {
-        "decision": "SCRAPE",
-        "score": 90,
-        "why": [
-          "WordPress 플러그인의 실제 취약점으로 보안 담당자가 인지해야 할 중요 정보",
-          "CVE-2026-23550 번호가 명시된 실제 취약점 기사",
-          "관리자 권한 탈취 가능성으로 심각성 확인"
-        ],
-        "products_affected": [
-          "Modular DS WordPress Plugin"
-        ],
-        "tags": [
-          "Vulnerability",
-          "CVE",
-          "WordPress"
-        ],
-        "summary_3lines": "🔴 높음 | 취약점(보안업데이트 권고)\n대상: WordPress 플러그인 'Modular DS' 2.5.1 이하\n설명: 인증 우회를 통한 관리자 권한 탈취 취약점, 원격 공격 가능"
+        "summary_3lines": "🔴 높음 | 취약점(긴급 보안업데이트 필요)\n대상: Microsoft Office 365, Office 2016/2019/LTSC 2021/2024\n설명: OLE 보안 기능 우회 취약점, 사용자 유도 공격 가능성"
       }
     }
   ]
