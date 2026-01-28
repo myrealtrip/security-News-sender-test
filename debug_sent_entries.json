@@ -1,28 +1,29 @@
 {
-  "timestamp": "2026-01-27 13:50:01",
+  "timestamp": "2026-01-28 01:39:09",
   "total_articles": 20,
   "sent_count": 1,
   "sent_articles": [
     {
-      "title": "메시지 열지 않아도 감염…왓츠앱 그룹채팅 보안 취약점 경고",
-      "link": "https://www.dailysecu.com/news/articleView.html?idxno=204710",
+      "title": "\"전 세계 텔넷 노출 80만대\"...GNU 텔넷데몬 취약점 악용 공격 시작",
+      "link": "https://www.dailysecu.com/news/articleView.html?idxno=204722",
       "ai_judgment": {
         "decision": "SCRAPE",
-        "score": 85,
+        "score": 90,
         "why": [
-          "실제 취약점으로 보안 담당자가 궁금해할 만한 내용",
-          "널리 사용되는 메신저(왓츠앱) 그룹채팅 취약점 발견",
-          "제로 클릭 공격 가능성으로 보안 위험성 높음"
+          "널리 사용되는 GNU 이넷유틸스 텔넷데몬 취약점으로 광범위한 영향 가능성",
+          "CVE-2026-24061 번호가 명시된 실제 취약점 기사",
+          "관리자 권한 우회 취약점으로 심각성 높음",
+          "80만대 장비 노출 및 공격 시작으로 긴급성 확인"
         ],
         "products_affected": [
-          "WhatsApp"
+          "GNU InetUtils"
         ],
         "tags": [
           "Vulnerability",
-          "Messenger",
-          "Zero-Click Attack"
+          "CVE",
+          "Network"
         ],
-        "summary_3lines": "🔴 높음 | 취약점(보안설정 권고)\n대상: WhatsApp (안드로이드)\n설명: 그룹채팅 통한 제로 클릭 공격 가능, 미디어 자동 다운로드 악용"
+        "summary_3lines": "🔴 높음 | 취약점(보안업데이트 권고)\n대상: GNU 이넷유틸스 텔넷데몬 1.9.3-2.7 버전\n설명: 인증 우회하여 관리자 권한으로 원격 접속 가능한 취약점 발견"
       }
     }
   ]
