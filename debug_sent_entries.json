@@ -1,28 +1,30 @@
 {
-  "timestamp": "2026-01-28 16:16:07",
+  "timestamp": "2026-01-28 16:48:49",
   "total_articles": 20,
   "sent_count": 1,
   "sent_articles": [
     {
-      "title": "솔라윈즈 웹 헬프 데스크, 인증 없이 서버 장악 가능한 취약점 다수 발견",
-      "link": "https://www.dailysecu.com/news/articleView.html?idxno=204746",
+      "title": "포티넷 FortiOS 인증 우회 취약점 발견…긴급 패치 적용 필수",
+      "link": "https://www.dailysecu.com/news/articleView.html?idxno=204749",
       "ai_judgment": {
         "decision": "SCRAPE",
         "score": 90,
         "why": [
-          "솔라윈즈 Web Help Desk의 심각한 다중 취약점 발견",
-          "인증 우회 및 원격 코드 실행 취약점 다수 존재",
-          "총 5개의 CVE 취약점 발견되어 심각성 높음"
+          "우리가 사용하는 네트워크 장비(FortiGate) 취약점으로 보안 담당자가 즉시 대응해야 할 중요한 사안",
+          "CVE-2026-24858로 식별된 고위험(CVSS 9.4) 인증 우회 취약점",
+          "실제 공격에 악용되고 있는 취약점으로 긴급 대응 필요"
         ],
         "products_affected": [
-          "SolarWinds Web Help Desk"
+          "Fortinet FortiOS",
+          "FortiManager",
+          "FortiAnalyzer"
         ],
         "tags": [
           "Vulnerability",
-          "Remote Code Execution",
-          "Authentication Bypass"
+          "CVE",
+          "Network Equipment"
         ],
-        "summary_3lines": "🔴 높음 | 취약점(보안업데이트 권고)\n대상: 솔라윈즈 Web Help Desk 2026.1 미만\n설명: 인증 우회, 원격 코드 실행 취약점 5개 발견 (CVE-2025-40551~40554, CVE-2025-40537)"
+        "summary_3lines": "🔴 높음 | 취약점(긴급 보안업데이트 필요)\n대상: Fortinet FortiOS, FortiManager, FortiAnalyzer\n설명: CVE-2026-24858, CVSS 9.4, FortiCloud SSO 인증 우회 취약점"
       }
     }
   ]
