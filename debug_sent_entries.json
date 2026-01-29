@@ -1,30 +1,27 @@
 {
-  "timestamp": "2026-01-29 06:23:59",
+  "timestamp": "2026-01-29 08:18:53",
   "total_articles": 20,
   "sent_count": 1,
   "sent_articles": [
     {
-      "title": "“공급망 보안 뚫리면 다 뚫려”... 럭스쉐어 침해로 애플 등 고객사 기술 정보 유출 우려",
-      "link": "http://www.boannews.com/media/view.asp?idx=141755&kind=1&sub_kind=",
+      "title": "n8n 제품 보안 업데이트 권고",
+      "link": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=71953",
       "ai_judgment": {
         "decision": "SCRAPE",
-        "score": 90,
+        "score": 85,
         "why": [
-          "공급망 보안 침해로 애플, 엔비디아, 테슬라 등 글로벌 기업의 기술 정보 유출 위험 확인",
-          "럭스쉐어에 대한 랜섬웨어 공격으로 핵심 기술 자산 유출 위협 존재",
-          "차세대 제품 CAD 모델, 엔지니어링 설계도, 회로 기판 디자인 등 민감한 정보 유출 가능성"
+          "n8n 제품의 2개의 원격 코드 실행 취약점 발견",
+          "CVE 번호 존재 (CVE-2026-0863, CVE-2026-1470)",
+          "구체적인 취약점 영향 버전과 해결 방안 제시"
         ],
         "products_affected": [
-          "아이폰",
-          "에어팟",
-          "비전 프로"
+          "n8n"
         ],
         "tags": [
-          "랜섬웨어",
-          "공급망 보안",
-          "기술 정보 유출"
+          "Vulnerability",
+          "Remote Code Execution"
         ],
-        "summary_3lines": "🔴 높음 | 공급망 보안 침해\n대상: 럭스쉐어\n내용: 랜섬웨어 공격으로 애플, 엔비디아 등 고객사 핵심 기술 정보 유출 위험"
+        "summary_3lines": "🔴 높음 | 취약점(보안업데이트 권고)\n대상: n8n\n설명: 2개의 원격 코드 실행 취약점 발견 (CVE-2026-0863, CVE-2026-1470)"
       }
     }
   ]
